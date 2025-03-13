@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroAI - Smart Farming Assistant</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        /* Custom styles to complement Bootstrap */
+        body {
+            padding-top: 56px;
+        }
+
+        .bg-success-gradient {
+            background: linear-gradient(135deg, #3e8e41 0%, #1e5631 100%);
+        }
+
+        .hero-section {
+            padding: 8rem 0 5rem;
+            color: white;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #3e8e41;
+        }
+
+        .step-number {
+            background-color: #3e8e41;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .sidebar {
+            background-color: #2d682f;
+            min-height: calc(100vh - 56px);
+        }
+
+        .alert-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #ffece6;
+            color: #ff6347;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/api/placeholder/40/40" alt="AgroAI Logo" class="me-2"> AgroAI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Success Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-success rounded-pill px-3 ms-2" href="#"
+                            data-bs-toggle="modal" data-bs-target="#loginModal">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="bg-success-gradient hero-section" id="home">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-3">Transform Your Farm with AI</h1>
+                        <p class="lead mb-4 opacity-75">AgroAI uses artificial intelligence to help farmers increase
+                            yields, reduce costs, and farm more sustainably.</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            <button type="button" class="btn btn-light btn-lg px-4 rounded-pill fw-bold text-success"
+                                onclick="showDashboard()">Try Dashboard Demo</button>
+                            <a href="#features" class="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold">Learn
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5" id="features">
+            <div class="container py-4">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold text-success mb-3">Smart Farming Features</h2>
+                        <p class="lead text-muted">AgroAI provides a comprehensive set of tools to optimize your farming
+                            operations.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm card-hover">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">🌱</div>
+                                <h3 class="h4 mb-3">AI-Powered Crop Monitoring</h3>
+                                <p class="text-muted">Analyze crop health using satellite imagery and detect issues
+                                    before they become problems.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm card-hover">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">🐛</div>
+                                <h3 class="h4 mb-3">Pest & Disease Detection</h3>
+                                <p class="text-muted">Upload images of your crops and get instant identification of
+                                    pests and diseases.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm card-hover">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">🌤️</div>
+                                <h3 class="h4 mb-3">Weather & Climate Insights</h3>
+                                <p class="text-muted">Get AI-powered weather forecasts and alerts specific to your
+                                    farm's location.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm card-hover">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">💧</div>
+                                <h3 class="h4 mb-3">Smart Resource Optimization</h3>
+                                <p class="text-muted">Optimize irrigation and fertilization based on soil data and crop
+                                    needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm card-hover">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">📱</div>
+                                <h3 class="h4 mb-3">Offline Mode</h3>
+                                <p class="text-muted">Access essential features even with low or no internet
+                                    connectivity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm card-hover">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">🔊</div>
+                                <h3 class="h4 mb-3">Voice Support</h3>
+                                <p class="text-muted">Interact with AgroAI using voice commands in your local language.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Preview -->
+        <section class="py-5 bg-light">
+            <div class="container py-4">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold text-success mb-3">Your Farm at a Glance</h2>
+                        <p class="lead text-muted">AgroAI's intuitive dashboard gives you real-time insights into your
+                            farm's performance.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <img src="/api/placeholder/800/450" alt="AgroAI Dashboard Preview"
+                            class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section class="py-5" id="how-it-works">
+            <div class="container py-4">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold text-success mb-3">How AgroAI Works</h2>
+                        <p class="lead text-muted">Getting started with AgroAI is simple and takes just minutes.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="d-flex flex-column gap-5">
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="step-number">1</div>
+                                <div>
+                                    <h3 class="h4">Register Your Farm</h3>
+                                    <p class="text-muted">Create an account and map your farm boundaries using our
+                                        simple interface.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="step-number">2</div>
+                                <div>
+                                    <h3 class="h4">Connect Data Sources</h3>
+                                    <p class="text-muted">Link weather stations, soil sensors, or simply upload photos
+                                        of your crops.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="step-number">3</div>
+                                <div>
+                                    <h3 class="h4">Get AI-Powered Insights</h3>
+                                    <p class="text-muted">Receive personalized recommendations based on your farm's
+                                        unique conditions.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="step-number">4</div>
+                                <div>
+                                    <h3 class="h4">Implement and Improve</h3>
+                                    <p class="text-muted">Apply the insights to your farming practices and track
+                                        improvements over time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5 bg-light" id="testimonials">
+            <div class="container py-4">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold text-success mb-3">Success Stories</h2>
+                        <p class="lead text-muted">Hear from farmers who have transformed their operations with AgroAI.
+                        </p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <p class="lead mb-4">"AgroAI helped me reduce water usage by 30% while increasing my
+                                    corn yield by 15%. The pest detection feature alone saved me thousands last season."
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <img src="/api/placeholder/50/50" alt="Farmer Portrait" class="rounded-circle me-3">
+                                    <div>
+                                        <h5 class="mb-1">John Martinez</h5>
+                                        <p class="text-muted small mb-0">Corn Farmer, Iowa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <p class="lead mb-4">"The weather forecasting is incredibly accurate. I was able to
+                                    harvest before an unexpected storm that would have damaged my entire crop. This app
+                                    paid for itself in one day!"</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="/api/placeholder/50/50" alt="Farmer Portrait" class="rounded-circle me-3">
+                                    <div>
+                                        <h5 class="mb-1">Sarah Johnson</h5>
+                                        <p class="text-muted small mb-0">Wheat Farmer, Kansas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <p class="lead mb-4">"As a small-scale organic farmer, the disease detection has been
+                                    invaluable. I can now spot issues before they spread and treat them with minimal
+                                    intervention."</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="/api/placeholder/50/50" alt="Farmer Portrait" class="rounded-circle me-3">
+                                    <div>
+                                        <h5 class="mb-1">Michael Lee</h5>
+                                        <p class="text-muted small mb-0">Organic Farmer, California</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-5 bg-success-gradient text-white">
+            <div class="container py-4 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold mb-3">Ready to Transform Your Farm?</h2>
+                        <p class="lead mb-4 opacity-75">Join thousands of farmers who are using AgroAI to improve yields
+                            and sustainability.</p>
+                        <button class="btn btn-light btn-lg px-5 rounded-pill fw-bold text-success"
+                            data-bs-toggle="modal" data-bs-target="#loginModal">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="h3 mb-4">AgroAI</h4>
+                    <p class="text-muted mb-0">Empowering farmers with artificial intelligence for sustainable and
+                        profitable agriculture.</p>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-3">Product</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Features</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Pricing</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">API</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Download App</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Documentation</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Knowledge Base</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-3">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Data Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary mt-4 pt-4 text-center text-muted">
+                <p class="small mb-0">&copy; 2025 AgroAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-success fw-bold" id="loginModalLabel">Log In to AgroAI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg">Log In</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p class="text-muted">Don't have an account? <a href="#"
+                                class="text-success text-decoration-none">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Demo Section (Hidden by default) -->
+    <div id="dashboard-section" class="d-none">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-2 p-0">
+                    <div class="sidebar text-white py-4">
+                        <div class="px-4 mb-4">
+                            <a href="#" class="d-flex align-items-center text-decoration-none text-white"
+                                onclick="showMainContent()">
+                                <img src="/api/placeholder/40/40" alt="AgroAI Logo" class="me-2">
+                                <span class="fs-4 fw-bold">AgroAI</span>
+                            </a>
+                        </div>
+                        <ul class="nav flex-column mb-auto px-3">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white active bg-white bg-opacity-10 rounded">
+                                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">
+                                    <i class="bi bi-graph-up me-2"></i> Analytics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">
+                                    <i class="bi bi-cloud-sun me-2"></i> Weather
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">
+                                    <i class="bi bi-bug me-2"></i> Pest Detection
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white">
+                                    <i class="bi bi-gear me-2"></i> Settings
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="px-4 mt-5 pt-5">
+                            <button class="btn btn-outline-light w-100" onclick="showMainContent()">
+                                <i class="bi bi-box-arrow-left me-2"></i> Back to Homepage
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Dashboard Content -->
+                <div class="col-lg-10 bg-light p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h2 class="mb-1">Welcome to Your Farm Dashboard</h2>
+                            <p class="text-muted">Here's what's happening on your farm today</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-success">
+                                <i class="bi bi-download me-2"></i> Export
+                            </button>
+                            <button class="btn btn-success">
+                                <i class="bi bi-plus-lg me-2"></i> New Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Cards -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h6 class="card-title mb-0">Soil Moisture</h6>
+                                        <div class="rounded-circle bg-success bg-opacity-10 p-2 text-success">
+                                            <i class="bi bi-droplet"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="display-6 text-success fw-bold mb-1">74%</h2>
+                                    <p class="text-muted small">Optimal range (65-80%)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h6 class="card-title mb-0">Current Temperature</h6>
+                                        <div class="rounded-circle bg-warning bg-opacity-10 p-2 text-warning">
+                                            <i class="bi bi-thermometer-half"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="display-6 text-warning fw-bold mb-1">28°C</h2>
+                                    <p class="text-muted small">3°C above normal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h6 class="card-title mb-0">Crop Health</h6>
+                                        <div class="rounded-circle bg-success bg-opacity-10 p-2 text-success">
+                                            <i class="bi bi-heart"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="display-6 text-success fw-bold mb-1">92%</h2>
+                                    <p class="text-muted small">Up 3% from last week</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h6 class="card-title mb-0">Irrigation Status</h6>
+                                        <div class="rounded-circle bg-primary bg-opacity-10 p-2 text-primary">
+                                            <i class="bi bi-water"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="display-6 text-primary fw-bold mb-1">Active</h2>
+                                    <p class="text-muted small">Next cycle: 6:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Sections -->
+                    <div class="row g-4">
+                        <!-- Weather Widget -->
+                        <div class="col-lg-5">
+                            <div class="card border-0 shadow-sm mb-4">
+                                <div
+                                    class="card-header bg-white d-flex justify-content-between align-items-center border-0 pt-3">
+                                    <h5 class="card-title mb-0">5-Day Weather Forecast</h5>
+                                    <button class="btn btn-sm btn-link text-muted p-0">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col">
+                                            <div class="text-center p-2 rounded bg-light">
+                                                <p class="mb-2 fw-bold">Today</p>
+                                                <i class="bi bi-sun fs-3 text-warning mb-2"></i>
+                                                <p class="mb-0 fw-bold">28°C</p>
+                                                <p class="mb-0 small">Sunny</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-center p-2 rounded bg-light">
+                                                <p class="mb-2 fw-bold">Fri</p>
+                                                <i class="bi bi-cloud-sun fs-3 text-secondary mb-2"></i>
+                                                <p class="mb-0 fw-bold">26°C</p>
+                                                <p class="mb-0 small">Partly Cloudy</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-center p-2 rounded bg-light">
+                                                <p class="mb-2 fw-bold">Sat</p>
+                                                <i class="bi bi-cloud-drizzle fs-3 text-info mb-2"></i>
+                                                <p class="mb-0 fw-bold">25°C</p>
+                                                <p class="mb-0 small">Light Rain</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-center p-2 rounded bg-light">
+                                                <p class="mb-2 fw-bold">Sun</p>
+                                                <i class="bi bi-cloud-rain fs-3 text-primary mb-2"></i>
+                                                <p class="mb-0 fw-bold">24°C</p>
+                                                <p class="mb-0 small">Rain</p>
+                                            </div>
+                                        </div>
+                                       
+
+
+
+
+                                                <div class="col">
+                                                    <div class="text-center p-2 rounded bg-light">
+                                                        <p class="mb-2 fw-bold">Mon</p>
+                                                        <i class="bi bi-cloud-lightning fs-3 text-danger mb-2"></i>
+                                                        <p class="mb-0 fw-bold">27°C</p>
+                                                        <p class="mb-0 small">Thunderstorms</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Pest Alerts -->
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-header bg-white d-flex justify-content-between align-items-center border-0 pt-3">
+                                            <h5 class="card-title mb-0">Recent Pest Alerts</h5>
+                                            <div class="alert-icon">
+                                                <i class="bi bi-exclamation-lg"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-flex gap-3 mb-3">
+                                                <div class="bg-danger bg-opacity-10 p-2 rounded">
+                                                    <i class="bi bi-bug fs-4 text-danger"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-1">Corn Borer Detected</h6>
+                                                    <p class="text-muted small mb-0">Field A-12 • High priority</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex gap-3">
+                                                <div class="bg-warning bg-opacity-10 p-2 rounded">
+                                                    <i class="bi bi-shield-exclamation fs-4 text-warning"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-1">Powdery Mildew Risk</h6>
+                                                    <p class="text-muted small mb-0">Field B-7 • Moderate risk</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Crop Health Chart -->
+                                <div class="col-lg-7">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-header bg-white d-flex justify-content-between align-items-center border-0 pt-3">
+                                            <h5 class="card-title mb-0">Crop Health Overview</h5>
+                                            <div class="dropdown">
+                                                <button class="btn btn-sm btn-link text-muted p-0" type="button" data-bs-toggle="dropdown">
+                                                    <i class="bi bi-three-dots"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li><a class="dropdown-item" href="#">Last 7 days</a></li>
+                                                    <li><a class="dropdown-item" href="#">Last 30 days</a></li>
+                                                    <li><a class="dropdown-item" href="#">Custom Range</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="/api/placeholder/600/300" alt="Crop Health Chart" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+            
+            <!-- Custom Script -->
+            <script>
+                function showDashboard() {
+                    document.getElementById('main-content').classList.add('d-none');
+                    document.getElementById('dashboard-section').classList.remove('d-none');
+                }
+        
+                function showMainContent() {
+                    document.getElementById('dashboard-section').classList.add('d-none');
+                    document.getElementById('main-content').classList.remove('d-none');
+                }
+            </script>
+        </body>
+        </html>
